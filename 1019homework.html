@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 500px;
+				margin: 100px auto;
+			}
+			textarea{
+				width: 500px;
+				height: 400px;
+				font-size: 30px;
+				
+			}
+			span{
+				font-size: 30px;
+			}
+			button{
+				width: 80px;
+				height: 35px;
+				background: greenyellow;
+				margin-left: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<textarea id="tx" maxlength="60"></textarea>
+			<span id="sp">还可以输入60字数</span>
+			<button id="btn">点击</button>
+		</div>
+		
+	</body>
+</html>
+<script>
+tx.onkeyup=function(){
+	var rem=60;
+	var rem_t=rem-tx.value.length;
+	console.log(rem_t)
+	sp.innerHTML = "还可以输入" + rem_t + "字数"; 
+	if(rem_t==0){
+		btn.style.pointerEvents='none';
+	}
+}
+
+</script>
